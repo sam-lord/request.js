@@ -135,9 +135,11 @@ function setDefaults(defs) {
                     if (opts.removeRefererHeader && opts.headers) {
                         delete opts.headers.referer;
                     }
-                    // TODO needs baseUrl, maybe test for host / socketPath?
-                    opts.url = resp.headers.location;
+                    
+                    const targetUrl = new URL(resp.headers.location, new URL(opts.url).origin);
+                    opts.url = targetUrl.href;
                     opts.uri = url.parse(opts.url);
+                    
                     return urequestHelper(opts, cb);
                 }
             }
