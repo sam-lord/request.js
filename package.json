@@ -1,5 +1,5 @@
 {
-    "name": "@root/request",
+    "name": "@sam-lord/request",
     "version": "1.7.1",
     "description": "A lightweight, zero-dependency drop-in replacement for request",
     "main": "index.js",
